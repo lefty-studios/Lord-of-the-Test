@@ -119,3 +119,54 @@ default.player_register_model("lottarmor_character.b3d", {
 		sit = {x=81, y=160},
 	},
 })
+--[[default.player_register_model("lottarmor_character_elf.b3d", {
+	animation_speed = 30,
+	textures = {
+		MULTISKIN_DEFAULT_SKIN,
+		MULTISKIN_TRANS,
+		MULTISKIN_TRANS,
+		MULTISKIN_TRANS,
+	},
+	animations = {
+		stand = {x=0, y=79},
+		lay = {x=162, y=166},
+		walk = {x=168, y=187},
+		mine = {x=189, y=198},
+		walk_mine = {x=200, y=219},
+		sit = {x=81, y=160},
+	},
+})
+default.player_register_model("lottarmor_character_dwarf.b3d", {
+	animation_speed = 30,
+	textures = {
+		MULTISKIN_DEFAULT_SKIN,
+		MULTISKIN_TRANS,
+		MULTISKIN_TRANS,
+		MULTISKIN_TRANS,
+	},
+	animations = {
+		stand = {x=0, y=79},
+		lay = {x=162, y=166},
+		walk = {x=168, y=187},
+		mine = {x=189, y=198},
+		walk_mine = {x=200, y=219},
+		sit = {x=81, y=160},
+	},
+})
+default.player_register_model("lottarmor_character_hobbit.b3d", {
+	animation_speed = 30,
+	textures = {
+		MULTISKIN_DEFAULT_SKIN,
+		MULTISKIN_TRANS,
+		MULTISKIN_TRANS,
+		MULTISKIN_TRANS,
+	},
+	animations = {
+		stand = {x=0, y=79},
+		lay = {x=162, y=166},
+		walk = {x=168, y=187},
+		mine = {x=189, y=198},
+		walk_mine = {x=200, y=219},
+		sit = {x=81, y=160},
+	},
+})
