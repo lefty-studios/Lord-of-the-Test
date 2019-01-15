@@ -178,10 +178,6 @@ minetest.register_abm({
 			[26] = "lottpotion:wine 5",
 			[27] = "lottpotion:wine 2",
 			[29] = "lottthrowing:bow_wood_alder",
-			[30]= "lottarmor:chestplate_gondor",
-			[31]= "lottarmor:helmet_gondor",
-			[32]= "lottarmor:leggings_gondor",
-			[33]= "lottarmor:boots_gondor",
 		}
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
@@ -235,10 +231,6 @@ minetest.register_abm({
 			[31]="lottmobs:horsepegh1",
 			[32]="lottthrowing:crossbow_tin",
 			[33]="lottthrowing:bolt 5",
-			[34]="lottarmor:chestplate_rohan",
-			[35]="lottarmor:helmet_rohan",
-			[36]="lottarmor:leggings_rohan",
-			[37]="lottarmor:boots_rohan",
 		}
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
