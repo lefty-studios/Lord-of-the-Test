@@ -230,6 +230,7 @@ mobs:register_mob("lottmobs:spider", {
 			return
 		end
 
+		
 		local pos = self.object:get_pos()
 		local yaw = self.object:get_yaw()
 
