@@ -136,6 +136,13 @@ mobs:register_mob("lottmobs:ent", {
 })
 mobs:register_spawn("lottmobs:ent", {"lottmapgen:fangorn_grass"}, 20, -1, 6000, 3, 31000)
 
+local get_velocity = function(self)
+
+	local v = self.object:get_velocity()
+
+	return (v.x * v.x + v.z * v.z) ^ 0.5
+end
+
 mobs:register_mob("lottmobs:spider", {
 	type = "monster",
 	hp_min = 20,
@@ -207,6 +214,46 @@ mobs:register_mob("lottmobs:spider", {
 	},
 	step = 1,
 	on_die = lottmobs.guard_die,
+		-- custom function to make spiders climb vertical facings
+	do_custom = function(self, dtime)
+
+		-- quarter second timer
+		self.spider_timer = (self.spider_timer or 0) + dtime
+		if self.spider_timer < 0.25 then
+			return
+		end
+		self.spider_timer = 0
+
+		-- need to be stopped to go onwards
+		if get_velocity(self) > 0.2 then
+			self.disable_falling = false
+			return
+		end
+
+		local pos = self.object:get_pos()
+		local yaw = self.object:get_yaw()
+
+		pos.y = pos.y + self.collisionbox[2] - 0.2
+
+		local dir_x = -math.sin(yaw) * (self.collisionbox[4] + 0.5)
+		local dir_z = math.cos(yaw) * (self.collisionbox[4] + 0.5)
+		local nod = minetest.get_node_or_nil({
+			x = pos.x + dir_x,
+			y = pos.y + 0.5,
+			z = pos.z + dir_z
+		})
+
+		-- get current velocity
+		local v = self.object:get_velocity()
+
+		-- can only climb solid facings
+		if not nod or not minetest.registered_nodes[nod.name]
+		or not minetest.registered_nodes[nod.name].walkable then
+			self.disable_falling = nil
+			v.y = 0
+			self.object:set_velocity(v)
+			return
+		end
 })
 mobs:register_spawn("lottmobs:spider", {"lottmapgen:mirkwood_grass"}, 20, -10, 6000, 3, 31000)
 
