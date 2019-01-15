@@ -294,28 +294,6 @@ lottachievements.register_achievement("rohirric_king", {
 	}
 })
 
-lottachievements.register_achievement("soldier_gondor", {
-	title = "Soldier of Gondor",
-	description = "Equip a full set of Gondor armor",
-	icon = "lottarmor_inv_chestplate_gondor.png",
-	id = 30,
-	trigger = {
-		type = "equip",
-		item = "lottarmor:chestplate_gondor",
-	}
-})
-
-lottachievements.register_achievement("soldier_rohan", {
-	title = "Soldier of Rohan",
-	description = "Equip a full set of Rohan armor",
-	icon = "lottarmor_inv_chestplate_rohan.png",
-	id = 30,
-	trigger = {
-		type = "equip",
-		item = "lottarmor:chestplate_rohan",
-	}
-}
-
 -- Various biome awards
 
 lottachievements.register_achievement("in_the_land_of_mordor", {
